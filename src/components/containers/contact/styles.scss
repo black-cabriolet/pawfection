@@ -1,0 +1,82 @@
+@use "@/styles/styles.scss" as *;
+
+.contact-preview {
+  background: #fefefe;
+  padding: 6rem 2rem;
+  text-align: center;
+  font-family: $font-primary;
+  color: $color-secondary;
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: $color-highlight;
+    margin-bottom: 3rem;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-item {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      color: $color-primary;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    p {
+      color: $color-secondary;
+      font-size: 1rem;
+    }
+  }
+
+  .contact-cta {
+    margin-top: 2rem;
+
+    .btn-primary {
+      background: $color-primary;
+      color: $color-secondary;
+      padding: 0.9rem 2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($color-primary, 10%);
+        transform: scale(1.05);
+      }
+    }
+  }
+}

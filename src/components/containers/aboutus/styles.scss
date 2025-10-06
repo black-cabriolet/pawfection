@@ -1,0 +1,74 @@
+@use "@/styles/styles.scss" as *;
+
+.about {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, $color-primary 10%, $color-accent 100%);
+  color: $color-secondary;
+  text-align: center;
+  padding: 5rem 2rem;
+
+  .aboutContent {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-family: $font-primary;
+      margin-bottom: 1.5rem;
+      color: $color-secondary;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      //color: rgba(255, 255, 255, 0.85);
+      color: $color-secondary;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: $color-secondary;
+      color: $color-primary;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 2rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: lighten($color-secondary, 10%);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // Responsiveness
+  @media (max-width: 768px) {
+    .aboutContent {
+      padding: 2rem 1.5rem;
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

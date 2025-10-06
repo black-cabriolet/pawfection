@@ -1,95 +1,54 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+
+import ReactParticles from '@/components/reactparticles/particles'
+import './styles.scss'
+import AboutUs from '@/components/containers/aboutus/aboutUs'
+import Services from '@/components/containers/services/services'
+import Gallery from '@/components/containers/gallery/gallery'
+import Pricing from '@/components/containers/pricing/pricing'
+import Contact from '@/components/containers/contact/contact'
+import Blog from '@/components/containers/blog/blog'
+import Link from "next/link";
+import React from "react";
+
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <>
+            <section id="heroSection" className="heroSection">
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+                {/* Particles go behind everything */}
+                <div className="reactParticles">
+                    <ReactParticles />
+                </div>
+
+                {/* Content stays above */}
+                <div className="homePageContents">
+                    <div className="logo">PawFection</div>
+                    <div className="slogan">Professional Dog Grooming & Care</div>
+                    <Link href="/contact" className="book">Learn More</Link>
+                </div>
+            </section>
+            <section className="aboutus" id={'aboutus'}>
+                <AboutUs/>
+            </section>
+            <section className="services" id="services">
+                <Services/>
+            </section>
+            <section className="gallery" id="gallery">
+                <Gallery/>
+            </section>
+            <section id="pricing" className="pricing">
+                <Pricing/>
+            </section>
+            <section className="blog" id="blog">
+                <Blog/>
+            </section>
+            <section className="contact" id="contact">
+                <Contact/>
+            </section>
+        </>
+
+
+    )
 }

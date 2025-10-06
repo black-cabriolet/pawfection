@@ -1,0 +1,52 @@
+@import '../../styles/styles';
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: $color-accent;
+  .logo a{
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    color: $color-primary;
+    text-decoration: none;
+  }
+
+  .nav-links{
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    li a{
+      text-decoration: none;
+      color: $color-highlight;
+      font-width: 500;
+      transition: color 0.3s ease;
+      &:hover{
+        color: $color-primary;
+        scale:1.1;
+
+      }
+      &:active{
+        color: $color-primary;
+        border-bottom: 2px solid $color-primary;
+        padding-bottom: 2px;
+      }
+    }
+  }
+  .bookings{
+    background: $color-primary;
+    padding: 10px;
+    border-radius: 10px;
+    & a{
+      text-decoration: none;
+      color: $color-accent;
+    }
+    &:hover{
+      scale:1.1;
+
+    }
+  }
+}

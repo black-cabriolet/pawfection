@@ -1,16 +1,57 @@
-.App{
-    height: 100%;
-    position: relative;
-    z-index: 0;
-}
-#particles{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-.navbar{
-    position: sticky;
-    z-index: 1;
-}
+@use "@/styles/styles.scss" as *;
 
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh; // ✅ limit to exactly one viewport height
+  overflow: hidden; // prevents scrollbars if particles overflow
+
+  .reactParticles {
+    position: fixed; // ✅ this keeps it pinned to the viewport
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; // ✅ ensures particles are always behind everything
+  }
+
+  .homePageContents {
+    position: relative;
+    z-index: 1;
+    color: $color-primary;
+    text-align: center;
+    font-family: $font-primary;
+    padding-top: 20vh;
+
+    .logo {
+      font-weight: bold;
+      font-size: 300px;
+    }
+
+    .slogan {
+      font-size: 50px;
+      margin-bottom: 100px;
+    }
+
+    .book {
+      display: inline-block;
+      padding-top: 10px;
+      background: $color-primary;
+      color: $color-secondary;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 2rem;
+      width: 200px;
+      height: 50px;
+      line-height: 50px; // ✅ vertically centers the text
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: $color-accent;
+        color: $color-primary;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        scale: 1.1;
+      }
+    }
+  }
+}

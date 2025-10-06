@@ -1,0 +1,89 @@
+@use "@/styles/styles.scss" as *;
+
+.blog-preview {
+  background: #fffdf8;
+  padding: 6rem 2rem;
+  text-align: center;
+  font-family: $font-primary;
+  color: $color-secondary;
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: $color-primary;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro {
+    font-size: 1.1rem;
+    color: $color-highlight;
+    margin-bottom: 3rem;
+  }
+
+  .blogGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    .blogCard {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      transition: all 0.3s ease;
+
+      h3 {
+        font-size: 1.3rem;
+        color: $color-primary;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: $color-highlight;
+        margin-bottom: 1rem;
+      }
+
+      .readMore {
+        font-weight: 600;
+        color: $color-primary;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: darken($color-primary, 10%);
+        }
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+
+  .more {
+    margin-top: 2rem;
+
+    .btn-primary {
+      background: $color-primary;
+      color: $color-secondary;
+      padding: 0.9rem 2rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($color-primary, 10%);
+        transform: scale(1.05);
+      }
+    }
+  }
+}

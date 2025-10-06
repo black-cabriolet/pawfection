@@ -1,0 +1,75 @@
+@import "../../styles/styles" ;
+
+.footer {
+  background-color: $color-secondary;
+  color: $color-accent;
+  font-family: $font-primary;
+  padding: 3rem 2rem 1rem;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    //display: grid;
+    //grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    //margin-bottom: 2rem;
+    margin:10px;
+
+    .section {
+      h3 {
+        color: $color-primary;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        &:hover{
+          color:$color-highlight
+        }
+      }
+
+      ul {
+        //list-style: none;
+        padding: 0;
+
+        li {
+          margin: 10px;
+
+          a {
+            color: $color-accent;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $color-primary;
+            }
+          }
+        }
+      }
+
+      p {
+        margin: 10px;
+      }
+
+      .socials {
+        display: flex;
+        gap: 1rem;
+
+        a {
+          color: $color-accent;
+          font-size: 1.2rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    border-top: 1px solid $color-highlight;
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $color-highlight;
+  }
+}
