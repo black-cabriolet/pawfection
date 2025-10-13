@@ -15,13 +15,13 @@ const Contact = () => {
           <div className="contact-item">
             <span className="icon">📍</span>
             <h3>Visit Us</h3>
-            <p>Greenwood Plaza, Nairobi</p>
+            <p>Pawfection Grooming Studio, Westlands, Nairobi</p>
           </div>
 
           <div className="contact-item">
             <span className="icon">📞</span>
             <h3>Call Us</h3>
-            <p>+254 700 123 456</p>
+            <p>+254 716 777 956</p>
           </div>
 
           <div className="contact-item">

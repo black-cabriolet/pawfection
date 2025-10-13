@@ -1,13 +1,24 @@
 import React from 'react'
 import './styles.scss'
 import Link from 'next/link';
-
+import Image from 'next/image'
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <div className="logo">
-                <Link href={'/'} className={'pawfection'}>PawFection</Link>
-            </div>
+             {/* Logo */}
+        <div className="logo">
+        <Link href="/" className="logo-link">
+          <Image
+            src="/paw.png" // image should be in /public/paw.png
+            alt="PawFection Logo"
+            width={80}
+            height={80}
+            priority
+            className="logo-img"
+          />
+          <span className="brand-name">PawFection</span>
+        </Link>
+      </div>
 
             <ul className="nav-links">
                 <li><Link href={'/'}>HOME</Link></li>

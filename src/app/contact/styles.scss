@@ -1,0 +1,192 @@
+// Brand Colors
+$color-primary: #d4af37; // Gold
+$color-secondary: #1a1a1a; // Deep Black
+$color-accent: #faf9f6; // Soft White
+$color-text-light: #555;
+$font-primary: "Poppins", sans-serif;
+
+.contact-page {
+  font-family: $font-primary;
+  background: $color-accent;
+  color: $color-secondary;
+
+  // HERO
+  .contact-hero {
+    position: relative;
+    background: linear-gradient(
+        rgba(26, 26, 26, 0.65),
+        rgba(26, 26, 26, 0.65)
+      ),
+      url("/gallery/poodle.png") center/cover no-repeat;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .overlay {
+      color: $color-accent;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+
+      h1 {
+        font-size: 2.8rem;
+        color: $color-primary;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: #f0f0f0;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  // CONTACT SECTION
+  .contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 6rem 3rem;
+    align-items: start;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+      h2 {
+        font-size: 2rem;
+        color: $color-primary;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: $color-text-light;
+        margin-bottom: 2rem;
+      }
+
+      .info-grid {
+        display: grid;
+        gap: 1.5rem;
+
+        .info-card {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          background: white;
+          border-radius: 12px;
+          padding: 1.5rem;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+          }
+
+          .icon {
+            font-size: 1.8rem;
+            color: $color-primary;
+          }
+
+          h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+          }
+
+          p {
+            color: $color-text-light;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+      h2 {
+        color: $color-primary;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+
+        label {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: $color-secondary;
+        }
+
+        input,
+        textarea {
+          border: 1px solid #ddd;
+          padding: 0.9rem 1rem;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-family: inherit;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+          &:focus {
+            border-color: $color-primary;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.25);
+            outline: none;
+          }
+        }
+
+        textarea {
+          min-height: 140px;
+          resize: vertical;
+        }
+      }
+
+      button {
+        background: $color-primary;
+        border: none;
+        color: white;
+        padding: 0.9rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background: darken($color-primary, 8%);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  // MAP
+  .map-section {
+    width: 100%;
+    height: 450px;
+    margin-top: 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(20%) brightness(95%);
+      transition: filter 0.3s ease;
+      &:hover {
+      filter: grayscale(0%) brightness(100%);
+    }
+
+    }
+  }
+}

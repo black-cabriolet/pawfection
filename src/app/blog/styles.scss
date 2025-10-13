@@ -1,0 +1,133 @@
+// Brand Colors
+$color-primary: #d4af37; // Gold
+$color-secondary: #1a1a1a; // Deep Black
+$color-accent: #fdfdfd; // Soft White
+$color-highlight: #4c4c4c; // Gray Highlight
+$font-primary: "Poppins", sans-serif;
+
+.blog-page {
+  font-family: $font-primary;
+  background: $color-accent;
+  color: $color-secondary;
+  line-height: 1.7;
+
+  // HERO
+  .blog-hero {
+    position: relative;
+    background: linear-gradient(
+        rgba(26, 26, 26, 0.6),
+        rgba(26, 26, 26, 0.6)
+      ),
+      url("/gallery/whitelabradoforstory.png") center/cover no-repeat;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      max-width: 750px;
+    }
+
+    h1 {
+      color: $color-primary;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: $color-accent;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  // BLOG SECTION
+  .blog-section {
+    padding: 6rem 2rem;
+    text-align: center;
+
+    h2 {
+      font-size: 2.2rem;
+      color: $color-primary;
+      margin-bottom: 3rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+
+      .blog-card {
+        background: $color-accent;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+          height: 220px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        .blog-content {
+          padding: 1.5rem;
+
+          h3 {
+            font-size: 1.4rem;
+            color: $color-secondary;
+            margin-bottom: 0.8rem;
+          }
+
+          .excerpt {
+            color: $color-highlight;
+            margin-bottom: 1.5rem;
+          }
+
+          .meta {
+            font-size: 0.9rem;
+            color: $color-highlight;
+            margin-bottom: 1.5rem;
+          }
+
+          .read-more {
+            background: $color-primary;
+            color: $color-secondary;
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: darken($color-primary, 6%);
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,73 +1,90 @@
 @use "@/styles/styles.scss" as *;
 
 .about {
-  width: 100%;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, $color-primary 10%, $color-accent 100%);
+  background: #fff;
+  padding: 6rem 2rem;
+  font-family: $font-primary;
   color: $color-secondary;
-  text-align: center;
-  padding: 5rem 2rem;
 
-  .aboutContent {
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 2rem;
-    padding: 3rem 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .about__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap; // responsive
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    @media (max-width: 900px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .about__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 1.5rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+    }
+  }
+
+  .about__content {
+    flex: 1;
+
+    h2 {
+      color: $color-primary;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
-    h1 {
-      font-size: 3rem;
-      font-family: $font-primary;
-      margin-bottom: 1.5rem;
-      color: $color-secondary;
+    .intro {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+
+      .brand {
+        font-weight: bold;
+        color: $color-primary;
+      }
     }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      //color: rgba(255, 255, 255, 0.85);
-      color: $color-secondary;
-      margin-bottom: 2.5rem;
+    .mission {
+      background: #f9f9f9;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+      h3 {
+        color: $color-primary;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        color: $color-highlight;
+        line-height: 1.6;
+      }
     }
 
     .btn-primary {
       display: inline-block;
-      background: $color-secondary;
-      color: $color-primary;
-      font-weight: 700;
-      text-decoration: none;
       padding: 0.9rem 2rem;
+      background: $color-primary;
+      color: $color-secondary;
       border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
       transition: all 0.3s ease;
 
       &:hover {
-        background: lighten($color-secondary, 10%);
+        background: darken($color-primary, 10%);
         transform: scale(1.05);
-      }
-    }
-  }
-
-  // Responsiveness
-  @media (max-width: 768px) {
-    .aboutContent {
-      padding: 2rem 1.5rem;
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      p {
-        font-size: 1rem;
       }
     }
   }

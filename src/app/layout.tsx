@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.scss";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 
-const geistSans = Geist({
+// Geist local font
+const geistSans = localFont({
+  src: "../fonts/Geist-VariableFont_wght.ttf",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Optional: comment this out for now if Geist Mono is missing
+// const geistMono = localFont({
+//   src: "../fonts/GeistMono-Regular.woff2",
+//   variable: "--font-geist-mono",
+//   weight: "400",
+// });
 
 export const metadata: Metadata = {
   title: "PawFection Grooming",
@@ -21,17 +26,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Navbar/>
-          {children}
-        <Footer/>
+      <body className={geistSans.variable}>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );
 }
-
