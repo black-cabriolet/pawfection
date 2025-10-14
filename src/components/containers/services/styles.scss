@@ -1,6 +1,9 @@
+@use "@/styles/styles.scss" as *;
+
 .services-section {
-  background: #fffdf8;
-  padding: 5rem 1rem;
+  background: linear-gradient(180deg, #fffdf8 0%, #fff 100%);
+  padding: 6rem 2rem;
+  font-family: $font-primary;
 
   .container {
     max-width: 1200px;
@@ -9,75 +12,177 @@
   }
 
   .intro-text {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease forwards;
 
     h1 {
-      font-size: 2.5rem;
-      color: #2a2a72;
+      font-size: 3rem;
+      color: $color-primary;
       margin-bottom: 1rem;
+      background: linear-gradient(90deg, $color-primary, $color-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     p {
       font-size: 1.1rem;
-      color: #444;
+      color: #555;
       max-width: 700px;
       margin: 0 auto;
+      line-height: 1.7;
     }
   }
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
   }
 
   .service-card {
     background: #fff;
-    border-radius: 1rem;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba($color-accent, 0.1), rgba($color-primary, 0.05));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 1.5rem;
+      z-index: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
 
     .icon {
-      font-size: 2.5rem;
-      display: block;
+      font-size: 3rem;
       margin-bottom: 1rem;
+      display: inline-block;
+      background: linear-gradient(90deg, $color-accent, $color-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      z-index: 1;
     }
 
     h3 {
-      font-size: 1.3rem;
-      color: #2a2a72;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color-primary;
       margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     p {
       color: #555;
       font-size: 1rem;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
     }
   }
 
   .cta-wrapper {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    animation: fadeInUp 1.2s ease forwards;
 
     .btn-primary {
       display: inline-block;
-      background: #ffb347;
+      background: $color-primary;
       color: #fff;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
+      padding: 1rem 2.5rem;
+      border-radius: 3rem;
       font-weight: 600;
-      transition: 0.3s ease;
+      text-decoration: none;
+      transition: all 0.3s ease;
 
       &:hover {
-        background: #2a2a72;
+        background: $color-accent;
+        transform: scale(1.05);
       }
     }
+  }
+}
+
+/* 🌐 RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 5rem 1.5rem;
+
+    .intro-text h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    .intro-text p {
+      font-size: 1rem;
+    }
+
+    .service-card {
+      padding: 2rem 1.5rem;
+
+      .icon {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 4rem 1rem;
+
+    .intro-text h1 {
+      font-size: 2rem;
+    }
+
+    .service-card {
+      border-radius: 1rem;
+      .icon {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    .cta-wrapper .btn-primary {
+      padding: 0.8rem 2rem;
+    }
+  }
+}
+
+/* ✨ Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

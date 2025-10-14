@@ -1,7 +1,7 @@
 "use client";
 
 
-import ReactParticles from "@/components/reactparticles/particles";
+
 import "./styles.scss";
 import AboutUs from "@/components/containers/aboutus/aboutUs";
 import Services from "@/components/containers/services/services";
@@ -12,17 +12,18 @@ import Blog from "@/components/containers/blog/blog";
 import Link from "next/link";
 
 
+
 export default function Home() {
   return (
       <>
         <section id="heroSection" className="heroSection">
-            <div className="reactParticles">
-              <ReactParticles />
-            </div>
 
             <div className="homePageContents">
-              <div className="logo">PawFection</div>
-              <div className="slogan">Professional Dog Grooming & Care</div>
+                <div className="desktopOnly">
+                    <div className="logo">PawFection</div>
+                    <div className="slogan">Professional Dog Grooming & Care</div>
+                </div>
+
               <Link href="/about" className="book">
                 Learn More
               </Link>

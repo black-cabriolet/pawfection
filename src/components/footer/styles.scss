@@ -1,4 +1,4 @@
-@import "../../styles/styles" ;
+@import "../../styles/styles";
 
 .footer {
   background-color: $color-secondary;
@@ -9,28 +9,26 @@
   .container {
     display: flex;
     justify-content: space-between;
-    //display: grid;
-    //grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
-    //margin-bottom: 2rem;
-    margin:10px;
+    margin: 10px;
 
     .section {
+      flex: 1;
+
       h3 {
         color: $color-primary;
         margin-bottom: 1rem;
         font-size: 1.2rem;
-        &:hover{
-          color:$color-highlight
+        &:hover {
+          color: $color-highlight;
         }
       }
 
       ul {
-        //list-style: none;
         padding: 0;
 
         li {
-          margin: 10px;
+          margin: 8px 0;
 
           a {
             color: $color-accent;
@@ -45,7 +43,7 @@
       }
 
       p {
-        margin: 10px;
+        margin: 8px 0;
       }
 
       .socials {
@@ -56,7 +54,7 @@
         a {
           color: $color-primary;
           font-size: 1.5rem;
-          transition: color 0.3s ease, color 0.3s ease;
+          transition: transform 0.3s ease, color 0.3s ease;
 
           &:hover {
             color: $color-accent;
@@ -73,5 +71,56 @@
     text-align: center;
     font-size: 0.9rem;
     color: $color-highlight;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+
+      .section {
+        width: 100%;
+        text-align: left;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .socials {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 1.5rem 1rem;
+
+    .container {
+      gap: 1rem;
+
+      .section {
+        h3 {
+          font-size: 1rem;
+        }
+
+        ul li {
+          margin: 5px 0;
+        }
+
+        .socials a {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .bottom {
+      font-size: 0.8rem;
+    }
   }
 }

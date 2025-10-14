@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 const Gallery: React.FC = () => {
   const images = [
@@ -41,7 +42,7 @@ const Gallery: React.FC = () => {
         <div className="gallery-grid">
           {images.map((image, index) => (
             <div key={index} className="gallery-item">
-              <img src={image.src} alt={image.alt} className="gallery-image" />
+              <Image src={image.src} alt={image.alt} className="gallery-image" />
               <div className="overlay">
                 <p>{image.alt}</p>
               </div>

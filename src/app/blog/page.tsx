@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import "./styles.scss";
 
 const Blog = () => {
@@ -53,7 +54,7 @@ const Blog = () => {
           {posts.map((post) => (
             <article key={post.id} className="blog-card">
               <div className="blog-image">
-                <img src={post.image} alt={post.title} />
+                <Image src={post.image} alt={post.title} />
               </div>
               <div className="blog-content">
                 <h3>{post.title}</h3>

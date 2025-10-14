@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import '@/components/containers/aboutus/styles.scss'
 
 const AboutUs = () => {
@@ -7,7 +8,15 @@ const AboutUs = () => {
     <section className="about">
       <div className="about__container">
         <div className="about__image">
-          <img src="/gallery/whiteolof.png" alt="Happy dog after grooming" />
+          <div className="circle-glow"></div>
+          <Image
+            src="/gallery/whiteolof.png"
+            alt="Happy dog after grooming"
+            width={450}
+            height={450}
+            priority
+            className="about__img"
+          />
         </div>
 
         <div className="about__content">
@@ -21,7 +30,7 @@ const AboutUs = () => {
           <div className="mission">
             <h3>Our Mission</h3>
             <p>
-              To create a grooming experience that celebrates every dog’s unique personality and beauty —
+              To create a grooming experience that celebrates every dog&apos;s unique personality and beauty —
               blending expert care with genuine love and compassion.
             </p>
           </div>
