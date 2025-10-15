@@ -1,12 +1,19 @@
-@use '../../styles/styles' as *;
+@use "@/styles/styles.scss" as *;
 
-
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+.navbar {
+  width: 100%;
+  height: 70px; // smaller height
   background: $color-accent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 
   .logo {
     display: flex;
@@ -19,100 +26,136 @@
       text-decoration: none;
 
       .logo-img {
-        width: 60px;
-        height: auto;
-        transition: transform 0.3s ease;
+        width: 50px; // smaller logo
+        height: 50px;
       }
 
       .brand-name {
-        color: $color-primary;
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         font-weight: 700;
-        letter-spacing: 1px;
-      }
-
-      &:hover .logo-img {
-        transform: rotate(-10deg) scale(1.05);
+        color: $color-primary;
+        letter-spacing: 0.5px;
       }
     }
   }
-  .nav-links{
-    list-style: none;
+
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: $color-secondary;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .nav-links {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    list-style: none;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
 
-    li a{
+    li a {
       text-decoration: none;
-      color: $color-highlight;
-      font-width: 500;
-      transition: color 0.3s ease;
-      &:hover{
-        color: $color-primary;
-        scale:1.1;
+      color: $color-secondary;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
 
-      }
-      &:active{
+      &:hover {
         color: $color-primary;
-        border-bottom: 2px solid $color-primary;
-        padding-bottom: 2px;
       }
     }
-  }
-  .bookings{
-    background: $color-primary;
-    padding: 10px;
-    border-radius: 10px;
-    & a{
-      text-decoration: none;
-      color: $color-accent;
+    .bookings{
+      display: none;
     }
-    &:hover{
-      scale:1.1;
 
-    }
   }
+  .bookings2 {
+      margin-left: 1.5rem;
+
+
+      a {
+        background: $color-primary;
+        color: $color-secondary;
+        padding: 0.5rem 1rem;
+        border-radius: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: darken($color-primary, 10%);
+          transform: scale(1.05);
+        }
+      }
+    }
+
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
+/* 🌍 Mobile view */
+@media (max-width: 768px) {
   .navbar {
-    flex-wrap: wrap;
-
-    .logo{
-
-    }
-
-    .nav-links {
-      flex-direction: column;
-      width: 100%;
-      display: none;
-      gap: 0;
-      margin-top: 1rem;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-
-      li {
-        text-align: center;
-        padding: 0.75rem 0;
-      }
-    }
-
-    .bookings {
-      width: 100%;
-      text-align: center;
-      margin-top: 0.5rem;
-    }
+    padding: 0 1.5rem;
+    height: 65px;
 
     .menu-toggle {
       display: block;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: #333;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background: $color-accent;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      transform: translateY(-120%);
+      transition: transform 0.4s ease;
+      z-index: 99;
+
+      &.nav-active {
+        transform: translateY(0);
+      }
+
+      li a {
+        font-size: 1.1rem;
+      }
+      .bookings{
+        display: grid;
+        background: $color-primary;
+        width: 300px;
+        height: 50px;
+        border-radius: 50px;
+        text-align: center;
+        align-items: center;
+        &:hover{
+            scale: 1.3;
+        }
+        &:active{
+          scale: 0.8;
+        }
+
+        a{
+          text-decoration: none;
+          color: $color-accent;
+        }
+      }
+    }
+
+    .bookings2 {
+      display: none;
     }
   }
-}
-
-/* Optional: Show nav-links when menu is active */
-.nav-active {
-  display: flex !important;
 }
